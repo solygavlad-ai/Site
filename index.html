@@ -39,16 +39,96 @@
       </div>
     </div>
 
-    <div class="works">
+   <div class="works">
       <h3>Мої роботи</h3>
       <ul>
         
-    <li><a href="tvoy.html" target="_blank">Довідник країн</a></li>
-      </ul>
+    <ul class="links">
+    <li><a href="Вгадати число.html" target="_blank">Вгадати число</a></li>
+    <li><a href="Вгадування числа на двох.html" target="_blank">Вгадування числа на двох</a></li>
+    <li><a href="Довідник країн.html" target="_blank">Довідник країн</a></li>
+    <li><a href="Дублювання тексту.html" target="_blank">Дублювання тексту</a></li>
+    <li><a href="Квадратне рівняння.html" target="_blank">Квадратне рівняння</a></li>
+    <li><a href="Кількість символів.html" target="_blank">Кількість символів</a></li>
+    <li><a href="Компліменти.html" target="_blank">Компліменти</a></li>
+    <li><a href="Логін і пароль.html" target="_blank">Логін і пароль</a></li>
+    <li><a href="Обчислення трикутника.html" target="_blank">Обчислення трикутника</a></li>
+    <li><a href="Оцінка.html" target="_blank">Оцінка</a></li>
+    <li><a href="Парні числа в діапазоні.html" target="_blank">Парні числа в діапазоні</a></li>
+    <li><a href="Спам.html" target="_blank">Визначення спаму</a></li>
+    <li><a href="Таблиця.html" target="_blank">Таблиця множення</a></li>
+    <li><a href="Факторіал.html" target="_blank">Факторіал</a></li>
+    <li><a href="Шахівниця.html" target="_blank">Шахівниця</a></li>
+</ul>
+<style>
+  .links{
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    max-width: 900px;
+}
+
+.links li a{
+    display: block;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 15px;
+    color: black;
+
+    background: white;
+    border: 2px solid black;
+    border-radius: 14px;
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+/* hover */
+.links li a:hover{
+    background: black;
+    color: lime;
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* animation on load */
+.links li{
+    animation: appear 0.6s ease forwards;
+    opacity: 0;
+}
+
+.links li:nth-child(odd){
+    animation-delay: 0.1s;
+}
+.links li:nth-child(even){
+    animation-delay: 0.2s;
+}
+
+@keyframes appear{
+    from{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+ 
+
+
+
+</style>
     </div>
   </div>
 </body>
-
 </html>
 
 
