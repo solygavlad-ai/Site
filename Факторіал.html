@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Факторіал числа</title>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #e8e8e8;
+        font-family: Arial;
+    }
+
+    .box{
+        width: 400px;
+        padding: 20px;
+        background: white;
+        border: 2px solid black;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    input{
+        width: 60%;
+        padding: 10px;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    button{
+        margin-top: 12px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .console{
+        margin-top: 15px;
+        background: black;
+        color: lime;
+        padding: 15px;
+        font-family: monospace;
+        font-size: 18px;
+        border-radius: 10px;
+        min-height: 40px;
+    }
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Обчислення факторіалу</h2>
+
+    <p>Введіть число:</p>
+    <input type="number" id="number" min="0">
+
+    <br>
+    <button onclick="calculateFactorial()">Обчислити</button>
+
+    <div class="console" id="output">Очікую число...</div>
+</div>
+
+<script>
+function calculateFactorial(){
+    let n = Number(document.getElementById("number").value);
+    let output = document.getElementById("output");
+
+    if(isNaN(n) || n < 0){
+        output.textContent = "Введіть коректне число (0 або більше)";
+        return;
+    }
+
+    let result = 1;
+    for(let i = 1; i <= n; i++){
+        result *= i;
+    }
+
+    output.textContent = "Факторіал числа " + n + " = " + result;
+}
+</script>
+
+</body>
+</html>

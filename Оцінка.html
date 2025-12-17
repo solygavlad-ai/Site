@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Рівень знань</title>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #e8e8e8;
+        font-family: Arial;
+    }
+
+    .box{
+        width: 400px;
+        padding: 20px;
+        background: white;
+        border: 2px solid black;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    input{
+        width: 60%;
+        padding: 10px;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    button{
+        margin-top: 12px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .console{
+        margin-top: 15px;
+        background: black;
+        color: lime;
+        padding: 15px;
+        font-family: monospace;
+        font-size: 18px;
+        border-radius: 10px;
+        min-height: 40px;
+    }
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Визначення рівня знань</h2>
+
+    <p>Введіть оцінку (1–12):</p>
+    <input type="number" id="grade" min="1" max="12">
+
+    <br>
+    <button onclick="checkLevel()">Перевірити</button>
+
+    <div class="console" id="output">Очікую оцінку...</div>
+</div>
+
+<script>
+function checkLevel(){
+    let count = Number(document.getElementById("grade").value);
+    let output = document.getElementById("output");
+
+    switch(count){
+        case 1:
+        case 2:
+        case 3:
+            output.textContent = "Початковий рівень";
+            break;
+
+        case 4:
+        case 5:
+        case 6:
+            output.textContent = "Середній рівень";
+            break;
+
+        case 7:
+        case 8:
+        case 9:
+            output.textContent = "Достатній рівень";
+            break;
+
+        case 10:
+        case 11:
+        case 12:
+            output.textContent = "Високий рівень";
+            break;
+
+        default:
+            output.textContent = "Нема такої оцінки!";
+    }
+}
+</script>
+
+</body>
+</html>

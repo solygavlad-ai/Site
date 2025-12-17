@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Перевірка на спам</title>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #e8e8e8;
+        font-family: Arial;
+    }
+
+    .box{
+        width: 450px;
+        padding: 20px;
+        background: white;
+        border: 2px solid black;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    textarea{
+        width: 90%;
+        height: 80px;
+        padding: 10px;
+        font-size: 16px;
+        margin-top: 10px;
+        resize: none;
+    }
+
+    button{
+        margin-top: 12px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .console{
+        margin-top: 15px;
+        background: black;
+        color: lime;
+        padding: 15px;
+        font-family: monospace;
+        font-size: 18px;
+        border-radius: 10px;
+        min-height: 40px;
+    }
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Перевірка тексту на спам</h2>
+
+    <p>Введіть текст:</p>
+    <textarea id="text"></textarea>
+
+    <br>
+    <button onclick="checkSpam()">Перевірити</button>
+
+    <div class="console" id="output">Очікую текст...</div>
+</div>
+
+<script>
+function checkSpam(){
+    let text = document.getElementById("text").value.toLowerCase();
+    let output = document.getElementById("output");
+
+    if(text.trim() === ""){
+        output.textContent = "Введіть текст!";
+        return;
+    }
+
+    // типові спам-слова
+    const spamWords = [
+        "безкоштовно",
+        "виграй",
+        "акція",
+        "клікни",
+        "зароби",
+        "гарантовано",
+        "100%",
+        "швидкі гроші"
+    ];
+
+    let isSpam = false;
+
+    for(let word of spamWords){
+        if(text.includes(word)){
+            isSpam = true;
+            break;
+        }
+    }
+
+    if(isSpam){
+        output.textContent = "⚠️ Це СПАМ!";
+    } else {
+        output.textContent = "✅ Це не спам";
+    }
+}
+</script>
+
+</body>
+</html>

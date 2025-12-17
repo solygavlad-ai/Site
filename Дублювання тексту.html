@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Дублювання тексту</title>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #e8e8e8;
+        font-family: Arial;
+    }
+
+    .box{
+        width: 500px;
+        padding: 20px;
+        background: white;
+        border: 2px solid black;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .console{
+        margin-top: 15px;
+        background: black;
+        color: lime;
+        padding: 15px;
+        font-family: monospace;
+        font-size: 18px;
+        border-radius: 10px;
+        min-height: 150px;
+        text-align: left;
+        overflow-y: auto;
+    }
+
+    input{
+        width: 80%;
+        padding: 10px;
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    button{
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Дублювання тексту</h2>
+
+    <p>Введіть текст:</p>
+    <input type="text" id="textInput" placeholder="Ваш текст">
+
+    <p>Кількість повторень:</p>
+    <input type="number" id="timesInput" placeholder="Наприклад, 5">
+
+    <button onclick="duplicateText()">Дублювати</button>
+
+    <div class="console" id="output">Очікую дії...</div>
+</div>
+
+<script>
+function duplicateText(){
+    let text = document.getElementById("textInput").value.trim();
+    let times = Number(document.getElementById("timesInput").value);
+    let output = document.getElementById("output");
+
+    if(!text){
+        output.textContent = "Введіть текст!";
+        return;
+    }
+
+    if(!times || times <= 0){
+        output.textContent = "Введіть правильну кількість повторень!";
+        return;
+    }
+
+    // Очищуємо попередній результат
+    output.textContent = "";
+
+    for(let i=0; i<times; i++){
+        output.innerHTML += text + "<br>";
+    }
+}
+</script>
+
+</body>
+</html>
