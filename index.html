@@ -18,8 +18,9 @@
       margin:20px auto;
       background:#fff;
       border-radius:10px;
-      box-shadow:0 6px 20px rgba(12,18,30,0.06);
-      padding:20px
+      padding:20px;
+      border:3px solid #6366f1;
+      box-shadow:0 15px 40px rgba(79,70,229,0.25);
     }
     .top-section{
       display:flex;
@@ -42,14 +43,49 @@
       padding-top:12px;
       border-top:1px solid #eef2f7
     }
-    .works ul{list-style:none;padding-left:0}
-    .works li{margin-bottom:8px}
-    .works a{
-      color:#7c3aed;
-      text-decoration:none;
-      font-weight:500
+    .works ul{
+      list-style:none;
+      padding-left:0;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:15px;
+      max-width:900px
     }
-    .works a:hover{text-decoration:underline}
+    .works li{
+      animation:appear 0.6s ease forwards;
+      opacity:0
+    }
+    .works li:nth-child(odd){animation-delay:0.1s}
+    .works li:nth-child(even){animation-delay:0.2s}
+
+    .works a{
+      display:block;
+      padding:15px 10px;
+      text-align:center;
+      text-decoration:none;
+      font-family:Arial;
+      font-size:15px;
+      color:black; /* чорний текст */
+      background:orange; /* оранжевий фон */
+      border:2px solid darkorange; /* темніша рамка */
+      border-radius:14px;
+      transition:transform 0.3s ease,
+                 box-shadow 0.3s ease,
+                 background 0.3s ease;
+    }
+    .works a:hover{
+      background:darkorange; /* темніший при наведенні */
+      color:white; /* при наведенні текст стає білим для контрасту */
+      transform:translateY(-6px) scale(1.05);
+      box-shadow:0 10px 20px rgba(0,0,0,0.3)
+    }
+
+    @keyframes appear{
+      from{transform:translateY(20px);opacity:0}
+      to{transform:translateY(0);opacity:1}
+    }
+
     @media (max-width:760px){
       .top-section{flex-direction:column}
       .left{flex:unset}
@@ -57,16 +93,9 @@
     }
   </style>
 </head>
-
-<!-- ✅ ФОН ДОДАНО -->
 <body style="background:linear-gradient(135deg,#e0e7ff,#f8fafc);">
 
-  <!-- ✅ ОБВОДКА + ТІНЬ ДОДАНО -->
-  <div class="card" style="
-    border:3px solid #6366f1;
-    box-shadow:0 15px 40px rgba(79,70,229,0.25);
-  ">
-
+  <div class="card">
     <div class="top-section">
       <div class="left">
         <div class="photo-placeholder" id="photo">
@@ -81,8 +110,7 @@
         <h3>Про мене (коротко)</h3>
         <p>
           Живу у Львівській області, місто Пустомити.
-          У школі я вже у 8 класі, також я навчаюсь у музичній школі —
-          там я вже 7 клас.
+          У школі я вже у 8 класі, також я навчаюсь у музичній школі — там я вже 7 клас.
         </p>
       </div>
     </div>
@@ -107,59 +135,12 @@
         <li><a href="Факторіал.html" target="_blank">Факторіал</a></li>
         <li><a href="Шахівниця.html" target="_blank">Шахівниця</a></li>
       </ul>
-
-      <style>
-        .links{
-          list-style:none;
-          padding:0;
-          margin:0 auto;
-          display:grid;
-          grid-template-columns:repeat(5,1fr);
-          gap:15px;
-          max-width:900px
-        }
-
-        .links li a{
-          display:block;
-          padding:15px 10px;
-          text-align:center;
-          text-decoration:none;
-          font-family:Arial;
-          font-size:15px;
-          color:black;
-          background:white;
-          border:2px solid black;
-          border-radius:14px;
-          transition:transform 0.3s ease,
-                     box-shadow 0.3s ease,
-                     background 0.3s ease
-        }
-
-        .links li a:hover{
-          background:black;
-          color:lime;
-          transform:translateY(-6px) scale(1.05);
-          box-shadow:0 10px 20px rgba(0,0,0,0.3)
-        }
-
-        .links li{
-          animation:appear 0.6s ease forwards;
-          opacity:0
-        }
-
-        .links li:nth-child(odd){animation-delay:0.1s}
-        .links li:nth-child(even){animation-delay:0.2s}
-
-        @keyframes appear{
-          from{transform:translateY(20px);opacity:0}
-          to{transform:translateY(0);opacity:1}
-        }
-      </style>
-
     </div>
   </div>
+
 </body>
 </html>
+
 
 
 
