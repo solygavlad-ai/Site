@@ -6,24 +6,67 @@
   <title>Головна сторінка</title>
   <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/9/94/%D0%97%D1%96%D1%80%D0%BA%D0%B0_-_Star.png">
   <style>
-    body{font-family:Inter,Arial,Helvetica,sans-serif;background:#f6f9fc;color:#0b1220;margin:0;padding:24px}
-    .card{max-width:900px;margin:20px auto;background:#fff;border-radius:10px;box-shadow:0 6px 20px rgba(12,18,30,0.06);padding:20px}
-    .top-section{display:flex;gap:20px;align-items:flex-start;margin-bottom:20px}
+    body{
+      font-family:Inter,Arial,Helvetica,sans-serif;
+      background:#f6f9fc;
+      color:#0b1220;
+      margin:0;
+      padding:24px
+    }
+    .card{
+      max-width:900px;
+      margin:20px auto;
+      background:#fff;
+      border-radius:10px;
+      box-shadow:0 6px 20px rgba(12,18,30,0.06);
+      padding:20px
+    }
+    .top-section{
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+      margin-bottom:20px
+    }
     .left{flex:0 0 320px}
-    .photo-placeholder img{width:100%;height:100%;object-fit:cover;border-radius:6px}
+    .photo-placeholder img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:6px
+    }
     .right{flex:1}
     h1{margin:0 0 10px 0;font-size:22px}
     p{margin:6px 0;color:#334155}
-    .works{margin-top:18px;padding-top:12px;border-top:1px solid #eef2f7}
+    .works{
+      margin-top:18px;
+      padding-top:12px;
+      border-top:1px solid #eef2f7
+    }
     .works ul{list-style:none;padding-left:0}
     .works li{margin-bottom:8px}
-    .works a{color:#7c3aed;text-decoration:none;font-weight:500}
+    .works a{
+      color:#7c3aed;
+      text-decoration:none;
+      font-weight:500
+    }
     .works a:hover{text-decoration:underline}
-    @media (max-width:760px){.top-section{flex-direction:column}.left{flex:unset}.photo-placeholder{width:100%;height:260px}}
+    @media (max-width:760px){
+      .top-section{flex-direction:column}
+      .left{flex:unset}
+      .photo-placeholder{width:100%;height:260px}
+    }
   </style>
 </head>
-<body>
-  <div class="card">
+
+<!-- ✅ ФОН ДОДАНО -->
+<body style="background:linear-gradient(135deg,#e0e7ff,#f8fafc);">
+
+  <!-- ✅ ОБВОДКА + ТІНЬ ДОДАНО -->
+  <div class="card" style="
+    border:3px solid #6366f1;
+    box-shadow:0 15px 40px rgba(79,70,229,0.25);
+  ">
+
     <div class="top-section">
       <div class="left">
         <div class="photo-placeholder" id="photo">
@@ -36,103 +79,88 @@
         <p>Я — підліток якому 14 років.</p>
 
         <h3>Про мене (коротко)</h3>
-        <p>Живу у Львівській області, місто Пустомити.
-        У школі я вже у 8 класі, також я навчаюсь у музичній школі
-        там я вже 7 клас.</p>
+        <p>
+          Живу у Львівській області, місто Пустомити.
+          У школі я вже у 8 класі, також я навчаюсь у музичній школі —
+          там я вже 7 клас.
+        </p>
       </div>
     </div>
 
-   <div class="works">
+    <div class="works">
       <h3>Мої роботи</h3>
-      <ul>
-        
-    <ul class="links">
-    <li><a href="Вгадати число.html" target="_blank">Вгадати число</a></li>
-    <li><a href="Вгадування числа на двох.html" target="_blank">Вгадування числа на двох</a></li>
-    <li><a href="Довідник країн.html" target="_blank">Довідник країн</a></li>
-    <li><a href="Дублювання тексту.html" target="_blank">Дублювання тексту</a></li>
-    <li><a href="Квадратне рівняння.html" target="_blank">Квадратне рівняння</a></li>
-    <li><a href="Кількість символів.html" target="_blank">Кількість символів</a></li>
-    <li><a href="Компліменти.html" target="_blank">Компліменти</a></li>
-    <li><a href="Логін і пароль.html" target="_blank">Логін і пароль</a></li>
-    <li><a href="Обчислення трикутника.html" target="_blank">Обчислення трикутника</a></li>
-    <li><a href="Оцінка.html" target="_blank">Оцінка</a></li>
-    <li><a href="Парні числа в діапазоні.html" target="_blank">Парні числа в діапазоні</a></li>
-    <li><a href="Спам.html" target="_blank">Визначення спаму</a></li>
-    <li><a href="Таблиця.html" target="_blank">Таблиця множення</a></li>
-    <li><a href="Факторіал.html" target="_blank">Факторіал</a></li>
-    <li><a href="Шахівниця.html" target="_blank">Шахівниця</a></li>
-</ul>
-<style>
-  .links{
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    max-width: 900px;
-}
 
-.links li a{
-    display: block;
-    padding: 15px 10px;
-    text-align: center;
-    text-decoration: none;
-    font-family: Arial;
-    font-size: 15px;
-    color: black;
+      <ul class="links">
+        <li><a href="Вгадати число.html" target="_blank">Вгадати число</a></li>
+        <li><a href="Вгадування числа на двох.html" target="_blank">Вгадування числа на двох</a></li>
+        <li><a href="Довідник країн.html" target="_blank">Довідник країн</a></li>
+        <li><a href="Дублювання тексту.html" target="_blank">Дублювання тексту</a></li>
+        <li><a href="Квадратне рівняння.html" target="_blank">Квадратне рівняння</a></li>
+        <li><a href="Кількість символів.html" target="_blank">Кількість символів</a></li>
+        <li><a href="Компліменти.html" target="_blank">Компліменти</a></li>
+        <li><a href="Логін і пароль.html" target="_blank">Логін і пароль</a></li>
+        <li><a href="Обчислення трикутника.html" target="_blank">Обчислення трикутника</a></li>
+        <li><a href="Оцінка.html" target="_blank">Оцінка</a></li>
+        <li><a href="Парні числа в діапазоні.html" target="_blank">Парні числа в діапазоні</a></li>
+        <li><a href="Спам.html" target="_blank">Визначення спаму</a></li>
+        <li><a href="Таблиця.html" target="_blank">Таблиця множення</a></li>
+        <li><a href="Факторіал.html" target="_blank">Факторіал</a></li>
+        <li><a href="Шахівниця.html" target="_blank">Шахівниця</a></li>
+      </ul>
 
-    background: white;
-    border: 2px solid black;
-    border-radius: 14px;
+      <style>
+        .links{
+          list-style:none;
+          padding:0;
+          margin:0 auto;
+          display:grid;
+          grid-template-columns:repeat(5,1fr);
+          gap:15px;
+          max-width:900px
+        }
 
-    transition: 
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-}
+        .links li a{
+          display:block;
+          padding:15px 10px;
+          text-align:center;
+          text-decoration:none;
+          font-family:Arial;
+          font-size:15px;
+          color:black;
+          background:white;
+          border:2px solid black;
+          border-radius:14px;
+          transition:transform 0.3s ease,
+                     box-shadow 0.3s ease,
+                     background 0.3s ease
+        }
 
-/* hover */
-.links li a:hover{
-    background: black;
-    color: lime;
-    transform: translateY(-6px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
+        .links li a:hover{
+          background:black;
+          color:lime;
+          transform:translateY(-6px) scale(1.05);
+          box-shadow:0 10px 20px rgba(0,0,0,0.3)
+        }
 
-/* animation on load */
-.links li{
-    animation: appear 0.6s ease forwards;
-    opacity: 0;
-}
+        .links li{
+          animation:appear 0.6s ease forwards;
+          opacity:0
+        }
 
-.links li:nth-child(odd){
-    animation-delay: 0.1s;
-}
-.links li:nth-child(even){
-    animation-delay: 0.2s;
-}
+        .links li:nth-child(odd){animation-delay:0.1s}
+        .links li:nth-child(even){animation-delay:0.2s}
 
-@keyframes appear{
-    from{
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to{
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
- 
+        @keyframes appear{
+          from{transform:translateY(20px);opacity:0}
+          to{transform:translateY(0);opacity:1}
+        }
+      </style>
 
-
-
-</style>
     </div>
   </div>
 </body>
 </html>
+
 
 
 
