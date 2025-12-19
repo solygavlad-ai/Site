@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банкомат</title>
+</head>
+<body>
+    <div class="box">
+    <h2>🏧 Банкомат</h2>
+
+    <div class="task">
+        Введіть суму для зняття (від 50 до 3000 грн)
+    </div>
+
+    <input type="number" id="money" placeholder="Наприклад: 500">
+    <button onclick="withdraw()">Зняти</button>
+
+    <div class="log" id="log">Очікую суму...</div>
+</div>
+
+<style>
+    body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background:#e8e8e8;
+        font-family:Arial;
+    }
+
+    .box{
+        width:420px;
+        padding:20px;
+        background:white;
+        border:2px solid black;
+        border-radius:15px;
+        text-align:center;
+    }
+
+    .task{
+        margin-bottom:10px;
+    }
+
+    input{
+        width:70%;
+        padding:10px;
+        font-size:18px;
+        margin-top:10px;
+
+        /* ❌ ПОВНЕ ВИМКНЕННЯ СТРІЛОК */
+        -moz-appearance: textfield;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    button{
+        margin-top:12px;
+        padding:10px 20px;
+        font-size:18px;
+        cursor:pointer;
+    }
+
+    .log{
+        margin-top:15px;
+        background:black;
+        color:lime;
+        padding:15px;
+        font-family:monospace;
+        font-size:18px;
+        border-radius:10px;
+        min-height:40px;
+    }
+</style>
+
+<script>
+function withdraw(){
+    let money = Number(document.getElementById("money").value);
+    let log = document.getElementById("log");
+
+    if(isNaN(money)){
+        log.textContent = "Введіть суму!";
+        return;
+    }
+
+    if(money < 50 || money > 3000){
+        log.textContent = "Сума має бути від 50 до 3000 грн!";
+        return;
+    }
+
+    if(money % 50 !== 0){
+        log.textContent = "Сума не відповідає купюрам банку!";
+        return;
+    }
+
+    log.textContent = "✅ Ви успішно зняли " + money + " грн";
+}
+</script>
+
+</body>
+</html>

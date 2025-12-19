@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Пора року</title>
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#e8e8e8;
+    font-family:Arial;
+}
+
+.box{
+    width:420px;
+    padding:20px;
+    background:white;
+    border:2px solid black;
+    border-radius:15px;
+    text-align:center;
+}
+
+input{
+    width:70%;
+    padding:10px;
+    font-size:18px;
+    margin-top:10px;
+}
+
+button{
+    margin-top:12px;
+    padding:10px 20px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.console{
+    margin-top:15px;
+    background:black;
+    color:lime;
+    padding:15px;
+    font-family:monospace;
+    font-size:18px;
+    border-radius:10px;
+    min-height:40px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Визначення пори року</h2>
+
+    <p>Введіть назву місяця:</p>
+    <input type="text" id="month" placeholder="Наприклад: березень">
+
+    <br>
+    <button onclick="checkSeason()">Визначити</button>
+
+    <div class="console" id="output">Очікую місяць...</div>
+</div>
+
+<script>
+function checkSeason(){
+    let month = document.getElementById("month").value.toLowerCase().trim();
+    let output = document.getElementById("output");
+
+    if(month === ""){
+        output.textContent = "Введіть назву місяця!";
+        return;
+    }
+
+    switch(month){
+        case "грудень":
+        case "січень":
+        case "лютий":
+            output.textContent = "❄ Зима";
+            break;
+
+        case "березень":
+        case "квітень":
+        case "травень":
+            output.textContent = "🌸 Весна";
+            break;
+
+        case "червень":
+        case "липень":
+        case "серпень":
+            output.textContent = "☀ Літо";
+            break;
+
+        case "вересень":
+        case "жовтень":
+        case "листопад":
+            output.textContent = "🍂 Осінь";
+            break;
+
+        default:
+            output.textContent = "Такого місяця не існує!";
+    }
+}
+</script>
+
+</body>
+</html>

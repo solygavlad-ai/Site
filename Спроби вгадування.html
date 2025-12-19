@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Вгадай число</title>
+
+<style>
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e8e8e8;
+    font-family: Arial;
+}
+
+.box{
+    width: 400px;
+    padding: 20px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    text-align: center;
+}
+
+input{
+    width: 60%;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+button{
+    margin-top: 12px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.console{
+    margin-top: 15px;
+    background: black;
+    color: lime;
+    padding: 15px;
+    font-family: monospace;
+    font-size: 18px;
+    border-radius: 10px;
+    min-height: 50px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Гра: Вгадай число</h2>
+
+    <p>Вгадайте число від 1 до 10</p>
+
+    <input type="number" id="guess" min="1" max="10" placeholder="Ваш варіант">
+
+    <br>
+    <button onclick="check()">Перевірити</button>
+
+    <div class="console" id="output">Очікую число...</div>
+</div>
+
+<script>
+let secret = Math.floor(Math.random() * 10) + 1;
+let attempts = 0;
+
+function check(){
+    let guess = Number(document.getElementById("guess").value);
+    let output = document.getElementById("output");
+
+    if(guess < 1 || guess > 10){
+        output.textContent = "Число має бути від 1 до 10";
+        return;
+    }
+
+    attempts++;
+
+    if(guess === secret){
+        output.textContent = "Ви вгадали за " + attempts + " спроб!";
+    } else {
+        output.textContent = "Неправильно. Спроба № " + attempts;
+    }
+}
+</script>
+
+</body>
+</html>

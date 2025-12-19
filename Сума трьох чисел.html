@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Сума трьох чисел</title>
+
+<style>
+    body{
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #e8e8e8;
+        font-family: Arial;
+    }
+
+    .box{
+        width: 380px;
+        padding: 20px;
+        background: white;
+        border: 2px solid black;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    input{
+        width: 65%;
+        padding: 10px;
+        font-size: 18px;
+        margin: 8px 0;
+    }
+
+    button{
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .console{
+        margin-top: 15px;
+        background: black;
+        color: lime;
+        padding: 15px;
+        font-family: monospace;
+        font-size: 18px;
+        border-radius: 10px;
+        min-height: 40px;
+    }
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Сума трьох чисел</h2>
+
+    <input type="number" id="n1" placeholder="Перше число">
+    <input type="number" id="n2" placeholder="Друге число">
+    <input type="number" id="n3" placeholder="Третє число">
+
+    <br>
+    <button onclick="sumNumbers()">Обчислити</button>
+
+    <div class="console" id="output">Очікую числа...</div>
+</div>
+
+<script>
+function sumNumbers(){
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    let c = Number(document.getElementById("n3").value);
+    let output = document.getElementById("output");
+
+    if(isNaN(a) || isNaN(b) || isNaN(c)){
+        output.textContent = "Введіть всі три числа!";
+        return;
+    }
+
+    let sum = a + b + c;
+    output.textContent = "Сума чисел = " + sum;
+}
+</script>
+
+</body>
+</html>
