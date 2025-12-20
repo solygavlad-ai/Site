@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Головна сторінка</title>
   <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/9/94/%D0%97%D1%96%D1%80%D0%BA%D0%B0_-_Star.png">
+
   <style>
     body{
       font-family:Inter,Arial,Helvetica,sans-serif;
       background:#f6f9fc;
-      color:#0b1220;
       margin:0;
       padding:24px
     }
+
     .card{
       max-width:900px;
       margin:20px auto;
@@ -22,27 +23,48 @@
       border:3px solid #6366f1;
       box-shadow:0 15px 40px rgba(79,70,229,0.25);
     }
+
     .top-section{
       display:flex;
       gap:20px;
       align-items:flex-start;
       margin-bottom:20px
     }
+
     .left{flex:0 0 320px}
+
     .photo-placeholder img{
       width:100%;
-      height:100%;
-      object-fit:cover;
       border-radius:6px
     }
+
     .right{flex:1}
-    h1{margin:0 0 10px 0;font-size:22px}
-    p{margin:6px 0;color:#334155}
+
+    h1{
+      margin:0 0 10px 0;
+      font-size:22px;
+      color:#0b1220
+    }
+
+    /* 🔥 ЗАГОЛОВОК "Про мене" */
+    .about-title{
+      color:#2563eb;
+      margin-top:12px
+    }
+
+    /* 🔥 ОСНОВНИЙ ТЕКСТ ПРО МЕНЕ */
+    .about-text{
+      font-weight:1000;          /* жирний */
+      color:#0f766e;            /* ОДИН колір */
+      line-height:1.5;
+    }
+
     .works{
       margin-top:18px;
       padding-top:12px;
       border-top:1px solid #eef2f7
     }
+
     .works ul{
       list-style:none;
       padding-left:0;
@@ -52,102 +74,92 @@
       gap:15px;
       max-width:900px
     }
-    .works li{
-      animation:appear 0.6s ease forwards;
-      opacity:0
-    }
-    .works li:nth-child(odd){animation-delay:0.1s}
-    .works li:nth-child(even){animation-delay:0.2s}
 
     .works a{
       display:block;
       padding:15px 10px;
       text-align:center;
       text-decoration:none;
-      font-family:Arial;
       font-size:15px;
-      color:black; /* чорний текст */
-      background:orange; /* оранжевий фон */
-      border:2px solid darkorange; /* темніша рамка */
+      color:black;
+      background:orange;
+      border:2px solid darkorange;
       border-radius:14px;
-      transition:transform 0.3s ease,
-                 box-shadow 0.3s ease,
-                 background 0.3s ease;
-    }
-    .works a:hover{
-      background:darkorange; /* темніший при наведенні */
-      color:white; /* при наведенні текст стає білим для контрасту */
-      transform:translateY(-6px) scale(1.05);
-      box-shadow:0 10px 20px rgba(0,0,0,0.3)
+      transition:0.3s
     }
 
-    @keyframes appear{
-      from{transform:translateY(20px);opacity:0}
-      to{transform:translateY(0);opacity:1}
+    .works a:hover{
+      background:darkorange;
+      color:white;
+      transform:translateY(-6px) scale(1.05);
+      box-shadow:0 10px 20px rgba(0,0,0,0.3)
     }
 
     @media (max-width:760px){
       .top-section{flex-direction:column}
       .left{flex:unset}
-      .photo-placeholder{width:100%;height:260px}
     }
   </style>
 </head>
+
 <body style="background:linear-gradient(135deg,#e0e7ff,#f8fafc);">
 
-  <div class="card">
-    <div class="top-section">
-      <div class="left">
-        <div class="photo-placeholder" id="photo">
-          <img src="photo_2025-12-17_16-42-45.jpg" alt="Моє фото">
-        </div>
-      </div>
+<div class="card">
 
-      <div class="right">
-        <h1>Сайт учня Солиги Владислава</h1>
-        <p>Я — підліток якому 14 років.</p>
-
-        <h3>Про мене (коротко)</h3>
-        <p>
-          Живу у Львівській області, місто Пустомити.
-          У школі я вже у 8 класі, також я навчаюсь у музичній школі — там я вже 7 клас. 
-          Також цікавлюся видами спорту: футбол, волейбол. Люблю гуляти з друзями та подоружувати.
-          Нещодавно я почав цікавитися програмуванням і вивчив вже веб-дизайн та базові знання Java Script 
-          (20.12.2025)
-        </p>
+  <div class="top-section">
+    <div class="left">
+      <div class="photo-placeholder">
+        <img src="photo_2025-12-17_16-42-45.jpg" alt="Моє фото">
       </div>
     </div>
 
-    <div class="works">
-      <h3>Мої роботи</h3>
+    <div class="right">
+      <h1>Сайт учня Солиги Владислава</h1>
+      <p>Я — підліток якому 14 років.</p>
 
-      <ul class="links">
-        <li><a href="Вгадати число.html" target="_blank">Вгадати число</a></li>
-        <li><a href="Вгадування числа на двох.html" target="_blank">Вгадування числа на двох</a></li>
-        <li><a href="Довідник країн.html" target="_blank">Довідник країн</a></li>
-        <li><a href="Дублювання тексту.html" target="_blank">Дублювання тексту</a></li>
-        <li><a href="Квадратне рівняння.html" target="_blank">Квадратне рівняння</a></li>
-        <li><a href="Кількість символів.html" target="_blank">Кількість символів</a></li>
-        <li><a href="Компліменти.html" target="_blank">Компліменти</a></li>
-        <li><a href="Логін і пароль.html" target="_blank">Логін і пароль</a></li>
-        <li><a href="Обчислення трикутника.html" target="_blank">Обчислення трикутника</a></li>
-        <li><a href="Оцінка.html" target="_blank">Оцінка</a></li>
-        <li><a href="Парні числа в діапазоні.html" target="_blank">Парні числа в діапазоні</a></li>
-        <li><a href="Спам.html" target="_blank">Визначення спаму</a></li>
-        <li><a href="Таблиця.html" target="_blank">Таблиця множення</a></li>
-        <li><a href="Факторіал.html" target="_blank">Факторіал</a></li>
-        <li><a href="Банкомат.html" target="_blank">Банкомат</a></li>
-        <li><a href="Шахівниця.html" target="_blank">Шахівниця</a></li>
-        <li><a href="Перевірка віку.html" target="_blank">Перевірка віку</a></li>
-        <li><a href="Спроби вгадування.html" target="_blank">Спроби вгадування</a></li>
-        <li><a href="Порі року.html" target="_blank">Пори року</a></li>
-        <li><a href="Сума трьо чисел.html" target="_blank">Сума трьох чисел</a></li>
-      </ul>
+      <h3 class="about-title">Про мене (коротко)</h3>
+
+      <p class="about-text">
+        Живу у Львівській області, місто Пустомити.
+        У школі я у 8 класі, навчаюсь у музичній школі — 7 клас.
+        Цікавлюся спортом: футбол, волейбол.
+        Люблю гуляти з друзями та подорожувати.
+        Почав цікавитися програмуванням і вже знаю веб-дизайн та базовий JavaScript.
+      </p>
     </div>
   </div>
 
+  <div class="works">
+    <h3>Мої роботи</h3>
+
+    <ul>
+      <li><a href="Вгадати число.html">Вгадати число</a></li>
+      <li><a href="Вгадування числа на двох.html">Вгадування числа на двох</a></li>
+      <li><a href="Довідник країн.html">Довідник країн</a></li>
+      <li><a href="Дублювання тексту.html">Дублювання тексту</a></li>
+      <li><a href="Квадратне рівняння.html">Квадратне рівняння</a></li>
+      <li><a href="Кількість символів.html">Кількість символів</a></li>
+      <li><a href="Компліменти.html">Компліменти</a></li>
+      <li><a href="Логін і пароль.html">Логін і пароль</a></li>
+      <li><a href="Обчислення трикутника.html">Обчислення трикутника</a></li>
+      <li><a href="Оцінка.html">Оцінка</a></li>
+      <li><a href="Парні числа.html">Парні числа</a></li>
+      <li><a href="Спам.html">Спам</a></li>
+      <li><a href="Таблиця.html">Таблиця множення</a></li>
+      <li><a href="Факторіал.html">Факторіал</a></li>
+      <li><a href="Банкомат.html">Банкомат</a></li>
+      <li><a href="Шахівниця.html">Шахівниця</a></li>
+      <li><a href="Перевірка віку.html">Перевірка віку</a></li>
+      <li><a href="Спроби вгадування.html">Спроби вгадування</a></li>
+      <li><a href="Пори року.html">Пори року</a></li>
+      <li><a href="Сума трьох чисел.html">Сума трьох чисел</a></li>
+    </ul>
+  </div>
+
+</div>
 </body>
 </html>
+
 
 
 
