@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анімація кола</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    canvas {
+      background-color: #fff;
+      border: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="600" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let x = 50; // початкова позиція по X
+    let y = 200; // початкова позиція по Y
+    let radius = 30; // радіус кола
+    let dx = 3; // швидкість по X
+    let dy = 2; // швидкість по Y
+
+    function draw() {
+      // очищаємо канвас
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // малюємо коло
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fillStyle = '#FF5733';
+      ctx.fill();
+      ctx.closePath();
+
+      // оновлюємо позицію
+      x += dx;
+      y += dy;
+
+      // відбивання від стінок
+      if (x + radius > canvas.width || x - radius < 0) {
+        dx = -dx;
+      }
+      if (y + radius > canvas.height || y - radius < 0) {
+        dy = -dy;
+      }
+
+      requestAnimationFrame(draw); // рекурсивно викликаємо draw для анімації
+    }
+
+    draw(); // запускаємо анімацію
+  </script>
+</body>
+</html>
